@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Prestige Goods</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FFB703',
+            accent: '#FB8500',
+            secondary: '#5B2333',
+            card: '#7A2E41',
+            'text-light': '#FFF8E7',
+            'text-muted': '#E6CBA8',
+          },
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            cursive: ['Great Vibes', 'cursive'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-secondary text-text-light font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-card border-b border-accent sticky top-0 z-20">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-3xl font-cursive text-primary">Prestige<span class="text-accent">Goods</span></h1>
+      <nav class="hidden md:flex space-x-8 text-lg">
+        <a href="#" class="hover:text-primary transition">Home</a>
+        <a href="#" class="text-primary">Products</a>
+        <a href="#" class="hover:text-primary transition">Cart</a>
+        <a href="#" class="hover:text-primary transition">Billing</a>
+        <a href="#" class="hover:text-primary transition">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Products Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-cursive text-center text-primary mb-12">Our Collection</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <!-- Product Card 1 -->
+        <div onclick="showProduct('Fusion X1 Ultra', 'AI smartphone with luxury finish.', '₹99,999', 'images/mobile.jpg')" 
+             class="bg-card p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 cursor-pointer">
+          <img src="images/mobile.jpg" alt="Fusion X1 Ultra" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-2xl font-bold mb-2">Fusion X1 Ultra</h3>
+          <p class="text-text-muted mb-4">AI smartphone with luxury finish.</p>
+          <span class="text-primary font-extrabold text-xl">₹99,999</span>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div onclick="showProduct('Quantum Watch', 'Waterproof luminous smart watch.', '₹24,999', 'images/watch.jpg')" 
+             class="bg-card p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 cursor-pointer">
+          <img src="images/watch.jpg" alt="Quantum Watch" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-2xl font-bold mb-2">Quantum Watch</h3>
+          <p class="text-text-muted mb-4">Waterproof luminous smart watch.</p>
+          <span class="text-primary font-extrabold text-xl">₹24,999</span>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div onclick="showProduct('Gravity Lamp', 'Floating warm light technology.', '₹4,499', 'images/lamp.jpg')" 
+             class="bg-card p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 cursor-pointer">
+          <img src="images/lamp.jpg" alt="Gravity Lamp" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-2xl font-bold mb-2">Gravity Lamp</h3>
+          <p class="text-text-muted mb-4">Floating warm light technology.</p>
+          <span class="text-primary font-extrabold text-xl">₹4,499</span>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div onclick="showProduct('Eclipse Laptop', 'Lightweight brilliance. Golden finish.', '₹89,999', 'images/laptop.png')" 
+             class="bg-card p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 cursor-pointer">
+          <img src="images/laptop.png" alt="Eclipse Laptop" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-2xl font-bold mb-2">Eclipse Laptop</h3>
+          <p class="text-text-muted mb-4">Lightweight brilliance. Golden finish.</p>
+          <span class="text-primary font-extrabold text-xl">₹89,999</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Detail Modal -->
+  <div id="productModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+    <div class="bg-card p-8 rounded-xl max-w-lg text-center relative">
+      <button onclick="closeModal()" class="absolute top-3 right-4 text-text-light text-2xl font-bold">&times;</button>
+      <img id="modalImg" src="" alt="" class="w-full h-64 object-cover rounded-md mb-4">
+      <h3 id="modalTitle" class="text-3xl font-bold mb-2"></h3>
+      <p id="modalDesc" class="text-text-muted mb-4"></p>
+      <span id="modalPrice" class="text-primary font-extrabold text-2xl block mb-6"></span>
+      <button class="bg-accent text-secondary font-bold py-2 px-6 rounded-lg hover:bg-primary transition">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-secondary text-text-muted py-8 border-t border-accent text-center">
+    <p>&copy; 2025 Prestige Goods. Glowing with Excellence.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function showProduct(title, desc, price, img) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('modalPrice').innerText = price;
+      document.getElementById('modalImg').src = img;
+      document.getElementById('productModal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('productModal').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>

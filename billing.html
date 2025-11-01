@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billing | Prestige Goods</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+ theme:{extend:{colors:{primary:'#FFB703',accent:'#FB8500',secondary:'#5B2333',card:'#7A2E41','text-light':'#FFF8E7','text-muted':'#E6CBA8'}}}
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-secondary text-text-light font-sans">
+
+<header class="bg-card border-b border-accent">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="index.html" class="text-3xl font-bold text-primary">Prestige Goods</a>
+    <nav class="space-x-6 hidden md:block">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="cart.html" class="hover:text-primary">Cart</a>
+      <a href="login.html" class="hover:text-primary">Login</a>
+    </nav>
+  </div>
+</header>
+
+<section class="py-16 max-w-5xl mx-auto px-6">
+  <h2 class="text-4xl font-bold text-primary mb-8 text-center">Billing & Payment</h2>
+  <form action="index.html" class="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-card p-8 rounded-xl shadow-lg">
+    <div>
+      <h3 class="text-2xl font-bold mb-4 text-accent">Shipping Address</h3>
+      <input type="text" placeholder="Full Name" class="w-full p-3 mb-3 rounded-lg bg-secondary border border-accent focus:ring-2 focus:ring-primary" required>
+      <input type="text" placeholder="Address" class="w-full p-3 mb-3 rounded-lg bg-secondary border border-accent focus:ring-2 focus:ring-primary" required>
+      <div class="grid grid-cols-2 gap-3">
+        <input type="text" placeholder="City" class="p-3 rounded-lg bg-secondary border border-accent focus:ring-2 focus:ring-primary" required>
+        <input type="text" placeholder="State" class="p-3 rounded-lg bg-secondary border border-accent focus:ring-2 focus:ring-primary" required>
+      </div>
+      <input type="text" placeholder="Pincode" class="w-full p-3 mt-3 rounded-lg bg-secondary border border-accent focus:ring-2 focus:ring-primary" required>
+    </div>
+    <div>
+      <h3 class="text-2xl font-bold mb-4 text-accent">Payment Method</h3>
+      <select class="w-full p-3 mb-4 rounded-lg bg-secondary border border-accent focus:ring-2 focus:ring-primary" required>
+        <option>Credit / Debit Card</option>
+        <option>UPI / QR Code</option>
+        <option>Net Banking</option>
+        <option>Cash on Delivery</option>
+      </select>
+      <input type="text" placeholder="Card Number" class="w-full p-3 mb-3 rounded-lg bg-secondary border border-accent focus:ring-2 focus:ring-primary">
+      <div class="grid grid-cols-2 gap-3">
+        <input type="text" placeholder="MM/YY" class="p-3 rounded-lg bg-secondary border border-accent focus:ring-2 focus:ring-primary">
+        <input type="text" placeholder="CVV" class="p-3 rounded-lg bg-secondary border border-accent focus:ring-2 focus:ring-primary">
+      </div>
+      <button type="submit" class="w-full mt-6 bg-accent text-secondary font-bold py-3 rounded-lg hover:bg-primary transition">Confirm Payment</button>
+    </div>
+  </form>
+</section>
+
+<footer class="bg-secondary text-text-muted py-8 border-t border-accent text-center">
+  <p>&copy; 2025 Prestige Goods. Crafted in Warm Elegance.</p>
+</footer>
+</body>
+</html>
